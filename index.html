@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portifólio</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body {font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; line-height: 1.6;}
+        h1, h2 {color: #333;}
+        a {color: #007bff; text-decoration: none;}
+    </style>
+</head>
+<body>
+
+<h1>Meu Portifólio</h1>
+<div id="content">Carregando...</div>
+
+<script>
+    fetch('https://github.com/banola/meuPortifolio.git')
+        .then(response => response.text())
+        .then(text => {
+            document.getElementById('content').innerHTML = marked.parse(text);
+    })
+    .catch(error => console.error('Erro ao carregar o Markdown: ' + error));
+</script>
+
+</body>
+</html>
