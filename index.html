@@ -17,7 +17,7 @@
 <div id="content">Carregando...</div>
 
 <script>
-    fetch('https://github.com/banola/meuPortifolio.git')
+    fetch('https://github.com/banola/meuPortifolio/main/portifolio.md')
         .then(response => response.text())
         .then(text => {
             document.getElementById('content').innerHTML = marked.parse(text);
